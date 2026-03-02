@@ -1,35 +1,48 @@
-# Groupomania - Projet 7
-NodeJs - Vue JS 3 - Express - Sequelize - MariaDB
+# 🏢 Groupomania - Réseau Social d'Entreprise
 
-## Back-end
-### Base de donnée
-MySQL
-la base de données utilisée pour créer ce projet était MariaDB.
-Les identifiants seront à renseignés dans le _.env_ (voir ci dessous)
+> **Projet de fin de formation (Projet 7 - OpenClassrooms)**
+> *Réalisation d'un MVP complet "from scratch" : Backend, Frontend et Base de données.*
 
-### Installation du back-end
-Depuis le dossier back-end, installer les différents packages nécessaires avec la commande ```npm install```
-### Initialisation des variables d'environnement 
-Renommer le fichier _.env.example_ en _.env_ 
-Compléter les différents champs du dossier avec vos propres variables:
-- SERVER_PORT: 8000
-- BCRYPT_SALT_ROUND: nombre de salage souhaité pour le hashage du mot de passe
-- DB_HOST: par défaut " localhost "
-- DB_PORT: par défaut "3306"
-- DB_USER: utilisateur de la base de donnée (par défaut root)
-- DB_PASSWORD: mot de passe de l'utilisateur de la base de donnée
-- JWT_SECRET: Mot de passe secret pour jsonwebtoken
-- JWT_DURATION: durée de validité du token (ex: "1h")
-- ADMIN_USER : ID du user souhaité comme admin (ex: 1)
+## 🎯 Le Projet
+Développement d'un outil de partage interne pour les employés du groupe Groupomania, visant à faciliter les interactions et le sentiment d'appartenance via un fil d'actualité interactif.
 
-### Gestion téléchargement des images
-Créer un dossier images dans le dossier back-end.
-Ce dossier est nécessaire pour stocker les images téléchargées par les utilisateurs
-### Lancement du serveur
-Lancer le serveur avec la commande ```npm run dev```
+## 🚀 Fonctionnalités clés
+- **Authentification sécurisée** : Inscription et connexion avec gestion de session via JWT.
+- **Fil d'actualité** : Création, modification et suppression de posts multimédias (texte et images).
+- **Interactions** : Système de "Likes" sur les publications.
+- **Rôle Administrateur** : Un compte modérateur dédié pour la gestion du contenu.
+- **Design Responsif** : Interface fluide s'adaptant aux mobiles, tablettes et desktops.
 
-## Front-end
-### Installation du front-end
-Depuis le dossier front-end/groupomania, installer les différents packages nécessaires avec la commande ```npm install```
-### Lancement du serveur
-Lancer le serveur avec la commande ```npm run serve```
+## 🛠️ Stack Technique
+- **Frontend** : Vue.js 3, Vue Router.
+- **Backend** : Node.js, Express.
+- **Base de données** : MariaDB / MySQL avec l'ORM Sequelize.
+- **Sécurité** : Hachage des mots de passe avec BCrypt et sécurisation des headers avec Helmet.
+
+---
+
+## ⚙️ Installation et Configuration
+
+### 🟢 Back-end
+1. **Dépendances** : Depuis le dossier `back-end`, lancez `npm install`.
+2. **Base de données** : Assurez-vous d'avoir une instance MariaDB/MySQL active.
+3. **Configuration** : Renommez le fichier `.env.example` en `.env` et complétez les variables :
+   - `SERVER_PORT`: 8000
+   - `BCRYPT_SALT_ROUND`: (ex: 10)
+   - `DB_USER`, `DB_PASSWORD`, `DB_NAME`
+   - `JWT_SECRET`, `JWT_DURATION` (ex: 1h)
+   - `ADMIN_USER` : ID du user souhaité comme admin.
+4. **Stockage** : Créez un dossier `/images` à la racine du dossier `back-end`.
+5. **Démarrage** : `npm run dev`.
+
+### 🔵 Front-end
+1. **Dépendances** : Depuis le dossier `front-end/groupomania`, lancez `npm install`.
+2. **Démarrage** : `npm run serve`.
+3. **Accès** : L'application est disponible par défaut sur `http://localhost:8080`.
+
+---
+
+## 🛡️ Engagement Qualité & Sécurité
+- Respect des standards **WCAG** pour l'accessibilité.
+- Protection contre les failles courantes (Injection SQL via Sequelize, XSS).
+- Stockage sécurisé des fichiers via Multer.
